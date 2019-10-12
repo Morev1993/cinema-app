@@ -1,0 +1,7 @@
+<mat-card class="movie-item">
+  <mat-card-header>
+    <mat-card-title>{{item.Title}}</mat-card-title>
+    <span class="movie-item-remove" (click)="handleRemove(item)">✕</span>
+  </mat-card-header>
+  <img mat-card-image [src]="item.Poster" [alt]="item.Title">
+</mat-card>

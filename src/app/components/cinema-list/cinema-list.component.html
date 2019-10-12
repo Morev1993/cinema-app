@@ -1,0 +1,8 @@
+<ng-container *ngIf="!list.length">No movies added yet</ng-container>
+
+<mat-grid-list cols="4" rowHeight="550px">
+  <mat-grid-tile *ngFor="let item of list">
+    <app-cinema-item [item]="item" (remove)="removeItem($event)"></app-cinema-item>
+  </mat-grid-tile>
+</mat-grid-list>
+

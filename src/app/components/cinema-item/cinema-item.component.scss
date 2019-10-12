@@ -1,0 +1,14 @@
+.movie-item {
+  cursor: pointer;
+}
+
+.movie-item-remove {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  transition: color .24s;
+  &:hover {
+    color: #3f51b5;
+  }
+}

@@ -1,0 +1,21 @@
+<ng-select [items]="cinema$ | async"
+           bindLabel="Title"
+           [addTag]="true"
+           placeholder="Search a movie"
+           [closeOnSelect]="false"
+           [multiple]="true"
+           [hideSelected]="true"
+           [trackByFn]="trackByFn"
+           [loading]="cinemaLoading"
+           [typeahead]="cinemaInput$"
+           [ngModel]="selectedPersons"
+            (ngModelChange)="change($event)">
+  <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+    <div class="option-item">
+      <div>
+        <img [src]="item.Poster" alt="" class="option-item-image">
+      </div>
+      <span>{{item.Title}}</span>
+    </div>
+  </ng-template>
+</ng-select>
