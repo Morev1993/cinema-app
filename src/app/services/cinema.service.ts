@@ -12,11 +12,11 @@ export class CinemaService {
 
   constructor(private http: HttpClient) { }
 
-  getList(title: string): Observable<Movie[]> {
+  getList(term: string): Observable<Movie[]> {
     return this.http.get(environment.url, {
       params: {
         apikey: environment.api_key,
-        s: title,
+        s: term,
         type: 'movie'
       }
     }).pipe(

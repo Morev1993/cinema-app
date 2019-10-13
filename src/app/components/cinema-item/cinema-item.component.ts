@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Movie} from '../../models/cinema.models';
 
 @Component({
@@ -6,15 +6,10 @@ import {Movie} from '../../models/cinema.models';
   templateUrl: './cinema-item.component.html',
   styleUrls: ['./cinema-item.component.scss']
 })
-export class CinemaItemComponent implements OnInit {
+export class CinemaItemComponent {
   @Input() item: Movie = {} as Movie;
 
   @Output() remove = new EventEmitter<Movie>();
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   handleRemove(movie) {
     this.remove.emit(movie);
