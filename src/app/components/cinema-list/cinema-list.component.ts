@@ -1,5 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {Subject} from 'rxjs';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Movie} from '../../models/cinema.models';
 
 @Component({
@@ -7,28 +6,13 @@ import {Movie} from '../../models/cinema.models';
   templateUrl: './cinema-list.component.html',
   styleUrls: ['./cinema-list.component.scss']
 })
-export class CinemaListComponent implements OnInit, OnDestroy {
+export class CinemaListComponent {
   @Input() list: Movie[] = [];
 
   @Output() removeMovie = new EventEmitter<Movie>();
 
-  private ngDestroyer: Subject<any> = new Subject<any>();
-
-  constructor() {
-
-  }
-
-  ngOnInit() {
-
-  }
-
   removeItem(movie: Movie) {
     this.removeMovie.emit(movie);
-  }
-
-  ngOnDestroy() {
-    this.ngDestroyer.next();
-    this.ngDestroyer.complete();
   }
 
 }

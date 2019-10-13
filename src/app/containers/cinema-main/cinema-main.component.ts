@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Movie} from '../../models/cinema.models';
+import {StorageService} from '../../services/storage.service';
+import {MOVIES_STORAGE_KEY} from '../../constants/cinema.constants';
 
 @Component({
   selector: 'app-cinema-main',
@@ -9,9 +11,11 @@ import {Movie} from '../../models/cinema.models';
 export class CinemaMainComponent implements OnInit {
   list: Movie[] = [];
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit() {
+    this.list = this.storageService.getJSON(MOVIES_STORAGE_KEY) || [];
+
   }
 
   addMovie(movies: Movie[]) {
@@ -20,11 +24,14 @@ export class CinemaMainComponent implements OnInit {
       .forEach(movie => {
       this.list.push(movie);
     });
+
+    this.storageService.saveJSON(MOVIES_STORAGE_KEY, this.list);
   }
 
   removeMovie(movie: Movie) {
-    console.log(movie);
     this.list = this.list.filter(item => item.imdbID !== movie.imdbID);
+
+    this.storageService.saveJSON(MOVIES_STORAGE_KEY, this.list);
   }
 
 }

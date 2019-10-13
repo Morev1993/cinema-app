@@ -26,8 +26,4 @@ export class CinemaService {
       catchError(err => throwError(err))
     );
   }
-
-  getDetails() {
-
-  }
 }

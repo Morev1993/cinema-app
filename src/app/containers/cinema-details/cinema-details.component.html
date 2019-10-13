@@ -1,1 +1,22 @@
-<p>details</p>
+<div *ngIf="isEmpty(movie)" class="movie-details-empty">
+  <div class="movie-details-back mr-2">
+    <button mat-raised-button routerLink="/list">Back</button>
+  </div>
+  <div>No movie found</div>
+</div>
+
+<mat-grid-list cols="3" rowHeight="500px" *ngIf="!isEmpty(movie)">
+  <mat-grid-tile>
+    <div class="movie-details">
+      <div class="d-flex align-items-center">
+        <div class="movie-details-back mr-2">
+          <button mat-raised-button routerLink="/list">Back</button>
+        </div>
+        <h2>{{movie.Title}}</h2>
+      </div>
+      <div class="movie-details-image-wrapper">
+        <img [src]="movie.Poster" alt="">
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

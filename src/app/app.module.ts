@@ -8,7 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { CinemaMainComponent } from './containers/cinema-main/cinema-main.component';
 import {FormsModule} from '@angular/forms';
 import {NgSelectModule} from '@ng-select/ng-select';
-import {MatCardModule, MatGridListModule, MatInputModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatGridListModule, MatInputModule, MatToolbarModule} from '@angular/material';
 import {CinemaListComponent} from './components/cinema-list/cinema-list.component';
 import {CinemaItemComponent} from './components/cinema-item/cinema-item.component';
 import {CinemaDetailsComponent} from './containers/cinema-details/cinema-details.component';
@@ -34,6 +34,7 @@ import {CinemaSearchInputComponent} from './containers/cinema-search-input/cinem
     MatInputModule,
     MatCardModule,
     MatGridListModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-<mat-card class="movie-item">
+<mat-card class="movie-item" [routerLink]="[item.imdbID]">
   <mat-card-header>
     <mat-card-title>{{item.Title}}</mat-card-title>
     <span class="movie-item-remove" (click)="handleRemove(item)">✕</span>

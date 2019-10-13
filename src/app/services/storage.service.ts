@@ -4,14 +4,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StorageService {
+  private data: {} = {};
 
-  constructor() { }
-
-  saveJSON() {
-
+  saveJSON(key: string, value: any[]) {
+    this.data[key] = value;
+    localStorage.setItem(key, JSON.stringify(value));
   }
 
-  getJSON() {
-
+  getJSON(key) {
+    if (this.data[key]) {
+      return this.data[key];
+    }
+    return JSON.parse(localStorage.getItem(key));
   }
 }

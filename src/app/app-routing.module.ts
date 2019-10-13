@@ -7,17 +7,12 @@ import {CinemaMainComponent} from './containers/cinema-main/cinema-main.componen
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'main',
+    redirectTo: 'list',
     pathMatch: 'full',
-  },
-  {
-    path: 'main',
-    component: CinemaMainComponent,
   },
   {
     path: 'list',
-    redirectTo: 'list/:cinemaId',
-    pathMatch: 'full',
+    component: CinemaMainComponent,
   },
   {
     path: 'list/:cinemaId',
